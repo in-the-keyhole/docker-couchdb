@@ -33,6 +33,11 @@ RUN curl -sSL http://apache.openmirror.de/couchdb/source/$COUCHDB_VERSION/apache
   && mkdir -p /usr/src/couchdb \
   && tar -xzf couchdb.tar.gz -C /usr/src/couchdb --strip-components=1
 
+# apply ssl patch
+RUN cd /usr/src/couchdb \
+  && wget --no-check-certificate https://github.com/apache/couchdb/commit/fdb2188afa4ed6b9b9aac1e4d3a989e73f0454ce.patch \
+  && patch -p1 < fdb2188afa4ed6b9b9aac1e4d3a989e73f0454ce.patch
+
 # build couchdb
 RUN cd /usr/src/couchdb \
   && ./configure --with-js-lib=/usr/lib --with-js-include=/usr/include/mozjs \

@@ -1,3 +1,15 @@
+***
+
+# NOTE:
+
+## workaround for ssl-related commit
+## [https://github.com/apache/couchdb/commit/fdb2188afa4ed6b9b9aac1e4d3a989e73f0454ce.patch](https://github.com/apache/couchdb/commit/fdb2188afa4ed6b9b9aac1e4d3a989e73f0454ce.patch)
+## not being applied to 1.6.x stream in couchdb, even though the documentation references the new feature
+## [http://docs.couchdb.org/en/1.6.1/config/http.html#ssl/protocol](http://docs.couchdb.org/en/1.6.1/config/http.html#ssl/protocol)
+## confirmed this scenario via irc chat
+
+***
+
 YADC
 ===
 
